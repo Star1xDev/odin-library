@@ -14,6 +14,7 @@ function addBookToLibary(title, author, pages, read){
 }
 
 function showBooks(){
+  container.innerHTML = "";
   for(let book of myLibrary){
     let div = document.createElement("div");
     div.classList.add("book");
@@ -50,27 +51,29 @@ const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
 const readInput = document.getElementById("read");
+// console.log(titleInput);
 
-add.addEventListener("click", () => {
+add.addEventListener("click", (e) => {
+   e.preventDefault();
    let title = titleInput.value;
    let author = authorInput.value;
    let pages = pagesInput.value;
    let read = readInput.value;
    addBookToLibary(title, author, pages, read);
-   // showBooks();
-   console.table(myLibrary);
+   showBooks();
+   console.log(myLibrary);
 });
 
 
 
 
 
-addBookToLibary("harry potter", "jk rolling", 231, true);
-addBookToLibary("one piece", "echiro oda", 33333, false);
-addBookToLibary("one piece", "echiro oda", 33333, false);
-addBookToLibary("one piece", "echiro oda", 33333, false);
-addBookToLibary("one piece", "echiro oda", 33333, false);
+// addBookToLibary("harry potter", "jk rolling", 231, true);
+// addBookToLibary("one piece", "echiro oda", 33333, false);
+// addBookToLibary("one piece", "echiro oda", 33333, false);
+// addBookToLibary("one piece", "echiro oda", 33333, false);
+// addBookToLibary("one piece", "echiro oda", 33333, false);
 
-showBooks();
+// showBooks();
 
 
